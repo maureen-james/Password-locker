@@ -2,4 +2,5 @@ class password:
 
      """
      """
-pass
+     password_locker = []
+     def _init_ 
