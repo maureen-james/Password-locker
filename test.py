@@ -2,6 +2,7 @@ import unittest
 
 from User import User # Importing the unittest module
 User # Importing the contact class
+from Credentials import Credentials
 
 class TestUser(unittest.TestCase):
 
@@ -26,6 +27,20 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_User.f_name,"Maureen")
         self.assertEqual(self.new_User.l_name,"Mwangi")
         self.assertEqual(self.new_User.p_number,"0712345678")
+    
+    def test_save_user(self):
+        """
+        test_save_user test case to test if the user object is saved into
+        the user_details
+        """
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_info),1)
+
+    def tearDown(self):
+        """
+        cleans after test case has run
+        """   
+        User.user_info =[]
 
         
 
