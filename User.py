@@ -9,8 +9,14 @@ class User:
        self.l_name=l_name
        self.p_number=p_number
       
-     def save_user(self):
+     def delete_user(self):
       """
       saves user infomation.
       """  
       User.user_info.append(self)
+
+     def delete_user(self):
+      """
+      deletes users' saved infomation.
+      """  
+      User.user_info.remove(self)
