@@ -42,6 +42,14 @@ class TestUser(unittest.TestCase):
         """   
         User.user_info =[]
 
+    def test_save_multiple_user(self):
+        """
+        to test if we can save multiple users
+        """    
+        self.new_user.save_user()
+        test_user=User("Test","1234")
+        test_user.save_user()
+        self.assertEqual(len(User.user_info),2)
         
 
 
