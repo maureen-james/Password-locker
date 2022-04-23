@@ -16,6 +16,20 @@ def save_credentials(self):
     """
     saves users credentials
     """ 
-    Credentials.user_infomation.append(self)  
+    Credentials.user_infomation.append(self)
+
+def delete_credentials(self):
+    """
+    deletes users credentials when needed to 
+    """  
+    Credentials.user_infomation.remove(self)
+
+@classmethod
+def display_credentials(cls):
+    """
+    return user information
+    """ 
+    return cls.user_information
+       
 
 
