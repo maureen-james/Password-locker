@@ -1,7 +1,11 @@
 class User:
 
      """
+     stores users info.
      """
-     password_locker = []
-     def _init_(self,first_name,last_name,phone_number,email):
-          
+     user_info = []
+     def __init__(self,f_name,l_name,p_number):
+      self.f_name=f_name
+      self.l_name=l_name
+      self.p_number=p_number
+      
