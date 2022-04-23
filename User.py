@@ -20,3 +20,10 @@ class User:
       deletes users' saved infomation.
       """  
       User.user_info.remove(self)
+     
+     @classmethod
+     def display_users(cls):
+        '''
+        method that returns the user list
+        '''
+        return cls.user_info
