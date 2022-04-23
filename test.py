@@ -23,9 +23,11 @@ class TestUser(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_contact.f_name,"Maureen")
-        self.assertEqual(self.new_contact.l_name,"Mwangi")
-        self.assertEqual(self.new_contact.p_number,"0712345678")
+        self.assertEqual(self.new_User.f_name,"Maureen")
+        self.assertEqual(self.new_User.l_name,"Mwangi")
+        self.assertEqual(self.new_User.p_number,"0712345678")
+
+        
 
 
 
