@@ -13,4 +13,4 @@ class User:
       """
       saves user infomation.
       """  
-     User.user_info.append(self)
+      User.user_info.append(self)
