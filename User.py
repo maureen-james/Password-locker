@@ -1,3 +1,7 @@
+import random
+import string
+import pyperclip
+
 class User:
      """
      stores users info.
@@ -9,20 +13,20 @@ class User:
        self.l_name=l_name
        self.p_number=p_number
       
-     def delete_user(self):
+     def save_User(self):
       """
       saves user infomation.
       """  
       User.user_info.append(self)
 
-     def delete_user(self):
+     def delete_User(self):
       """
       deletes users' saved infomation.
       """  
       User.user_info.remove(self)
      
      @classmethod
-     def display_users(cls):
+     def display_Users(cls):
         '''
         method that returns the user list
         '''
