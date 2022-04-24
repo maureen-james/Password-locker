@@ -89,23 +89,24 @@ class TestCredentials(unittest.TestCase):
         the user_details
         '''
         self.new_credentials.save_credentials()
-        self.assertEqual(len(Credentials.user_infomation),1)  
-              
+        self.assertEqual(len(Credentials.user_infomation),1)        
     def tearDown(self):
         """
         tearDown method that does clean up after each test case has run.
         """
         Credentials.user_infomation = []
-
+    
+    
     def test_save_multiple_credentials(self):
         """
         test_save_multiple_credentials to check if we can save multiple credentials
-        objects to our credentials_list
+        objects to our user information
         """
         self.new_credentials.save_credentials()
-        test_credentials= Credentials("instagram","@nyambura","98765")
-        test_credentials.save_credentials()
+        # test_credentials= Credentials("instagram","@nyambura","98765")
+        # test_credentials.save_credentials()
         self.assertEqual(len(Credentials.user_infomation),2)
+
 
     def test_delete_credentials(self):
 
@@ -123,29 +124,29 @@ class TestCredentials(unittest.TestCase):
         """
         self.assertEqual(Credentials.display_credentials(),Credentials.user_infomation)
 
-    def test_find_credential(self):
+    def test_find_credentials(self):
 
         '''
         test to check if we can return a Boolean  if we cannot find the credentialsusing account name.
         '''
         self.new_credentials.save_credentials()
-        test_credential = Credentials("facebook", "mwas", "348767")   
-        test_credential.save_credentials()
+        test_credentials = Credentials("facebook", "mwas", "348767")   
+        test_credentials.save_credentials()
 
-        the_credential = Credentials.find_credential("facebook")
+        the_credentials = Credentials.find_credentials("facebook")
 
-        self.assertEqual(the_credential.account_name,test_credential.account_name)
+        self.assertEqual(the_credentials.account_name,test_credentials.account_name)
 
 
-    def test_credential_exist(self):
+    def test_credentials_exist(self):
         """
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
         self.new_credentials.save_credentials()
-        the_credential = Credentials("facebook", "mwas", "348767")  
-        the_credential.save_credentials()
-        credential_is_found = Credentials.if_credential_exist("facebook")
-        self.assertTrue(credential_is_found)
+        the_credentials = Credentials("facebook", "mwas", "348767")  
+        the_credentials.save_credentials()
+        credentials_is_found = Credentials.if_credentials_exist("facebook")
+        self.assertTrue(credentials_is_found)
 
 
 

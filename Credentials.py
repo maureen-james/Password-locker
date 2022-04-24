@@ -1,6 +1,6 @@
 import random
 import string
-import pyperclip
+# import pyperclip
 
 class Credentials:
      """
@@ -45,22 +45,22 @@ def display_credentials(cls):
     return cls.user_information
 
 @classmethod
-def find_credential(cls, account_name):
+def find_credentials(cls, account_name):
         """
      takes in account_name and returns a credentials that matches with that account_name.
         """
-        for credential in cls.user_information:
-            if credential.account_name == account_name:
-                return credential
+        for credentials in cls.user_information:
+            if credentials.account_name == account_name:
+                return credentials
 
     
 @classmethod
-def if_credential_exist(cls, account_name):
+def if_credentials_exist(cls, account_name):
         """
         checks if a credential exists 
         """
-        for credential in cls.user_information:
-            if credential.account_name == account_name:
+        for credentials in cls.user_information:
+            if credentials.account_name == account_name:
                 return True
         return False
 
@@ -77,10 +77,10 @@ def generatePassword(stringLength=8):
         password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
         return ''.join(random.choice(password) for i in range(stringLength))
 
-@classmethod
-def copy_password(cls,account):
-        found_credentials = Credentials.find_credential(account)
-        pyperclip.copy(found_credentials.password)
+# @classmethod
+# def copy_password(cls,account):
+#         found_credentials = Credentials.find_credentials(account)
+#         pyperclip.copy(found_credentials.password)
 
     
   

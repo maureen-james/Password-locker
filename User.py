@@ -1,6 +1,6 @@
 import random
 import string
-import pyperclip
+# import pyperclip
 
 class User:
      """
