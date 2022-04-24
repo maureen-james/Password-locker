@@ -1,6 +1,5 @@
 import random
 import string
-# import pyperclip
 
 class Credentials:
      """
@@ -19,17 +18,6 @@ def save_credentials(self):
     saves users credentials
     """ 
     Credentials.user_infomation.append(self)
-
-# @classmethod
-# def verify_user(cls,username, password):
-#         """
-#         method to verify whether the user is in our user_list or not
-#         """
-#         a_user = ""
-#         for user in User.user_info:
-#             if(user.username == username and user.password == password):
-#                     a_user == user.username
-#         return a_user    
 
 def delete_credentials(self):
     """
@@ -76,11 +64,6 @@ def generatePassword(stringLength=8):
         """Generate a random password string of letters and digits and special characters"""
         password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
         return ''.join(random.choice(password) for i in range(stringLength))
-
-# @classmethod
-# def copy_password(cls,account):
-#         found_credentials = Credentials.find_credentials(account)
-#         pyperclip.copy(found_credentials.password)
 
     
   
